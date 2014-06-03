@@ -31,9 +31,16 @@ module.exports = (grunt) ->
         options:
           base: 'src'
           port: 8080
+    bower:
+      install:
+        options:
+          cleanBowerDir: true
+          targetDir: 'src/js/vendor'
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-sass'
+  grunt.loadNpmTasks 'grunt-bower-task'
 
-  grunt.registerTask 'default', ['connect', 'watch']
+  grunt.registerTask 'setup', ['bower', 'sass']
+  grunt.registerTask 'default', ['setup', 'connect', 'watch']

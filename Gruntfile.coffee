@@ -4,9 +4,13 @@ module.exports = (grunt) ->
       html:
         files: ['src/**/*.html']
         options:
-          reload: true
+          livereload: true
+    connect:
+      options:
+        port: 8080
 
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-contrib-connect'
 
-  grunt.registerTask 'default', ['watch']
+  grunt.registerTask 'default', ['watch', 'connect']

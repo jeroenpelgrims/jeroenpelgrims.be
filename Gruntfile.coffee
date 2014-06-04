@@ -7,13 +7,19 @@ module.exports = (grunt) ->
           reload: true
       html:
         files: ['src/**.html']
+      js:
+        files: ['src/js/**.js']
       sass:
         files: ['src/sass/**.scss']
         tasks: ['sass']
+      bower:
+        files: ['bower.json']
+        tasks: ['bower']
       livereload:
         files: [
           'src/**.html'
-          'src/css/**/*.css'
+          'src/css/**/*.css',
+          'src/js/**/*.js'
         ]
         options:
           livereload: true

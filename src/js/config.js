@@ -7,12 +7,15 @@ require.config({
   },
 
   shim: {
-    'bootstrap': {
+    jquery: {
+      exports: '$'
+    },
+    bootstrap: {
       deps: ['jquery']
     }
   },
 
   deps: [
-    'bootstrap'
+    'main'
   ]
 });

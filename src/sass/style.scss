@@ -11,13 +11,39 @@ body {
   }
   @media (max-width: 768px) {
     background: url("/img/cover.jpg") no-repeat;
-    background-size: auto 10%;
-    //background-attachment: fixed;
-    background-position: auto;
+    background-size: auto 15%;
+    background-position: 20% 0%;
+  }
+
+  > nav.navbar {
+    position: fixed;
+    width: 100%;
+
+    a {
+      color: #fff;
+
+      &:hover {
+        background-color: rgba(200, 200, 200, .5);
+      }
+    }
+
+    &.affix {
+      width: 100%;
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        background-color: rgba(33, 33, 33, .5);
+        float: right;
+      }
+    }
   }
 
   > header {
-    margin: 15em auto;
+    margin: 10em auto 15em auto;
     background-color: rgba(33, 33, 33, .5);
     color: #fff;
     text-align: center;

@@ -16,8 +16,31 @@ body {
   }
 
   > nav.navbar {
-    position: fixed;
+    top: 0;
     width: 100%;
+    float: right;
+    position: fixed;
+    z-index: 1;
+    border: none;
+    
+    @media (min-width: 768px) {
+      &.affix {
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+
+        ul {
+          padding: 0;
+          background-color: rgba(33, 33, 33, .5);
+          float: right;
+        }
+      }
+
+      .navbar-nav.navbar-right:last-child {
+        margin-right: 0;
+      }
+    }
 
     a {
       color: #fff;
@@ -27,23 +50,28 @@ body {
       }
     }
 
-    &.affix {
-      width: 100%;
-      border-radius: 0;
+    .navbar-toggle {
       padding: 0;
       margin: 0;
+      float: none;
+      background-color: #fff;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid #999;
 
-      ul {
+      .navbar-nav {
         margin: 0;
-        padding: 0;
-        background-color: rgba(33, 33, 33, .5);
-        float: right;
+      }
+
+      a {
+        color: #333;
+        text-align: center;
       }
     }
   }
 
   > header {
-    margin: 10em auto 15em auto;
+    margin: 12em auto 15em auto;
     background-color: rgba(33, 33, 33, .5);
     color: #fff;
     text-align: center;

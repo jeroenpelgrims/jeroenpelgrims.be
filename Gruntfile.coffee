@@ -36,7 +36,7 @@ module.exports = (grunt) ->
       server:
         options:
           base: 'src'
-          port: 8080
+          port: 8081
     bower:
       install:
         options:

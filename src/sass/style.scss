@@ -110,7 +110,41 @@ body {
 
   > main {
     clear: both;
-    height: 500em;
     background-color: #fff;
+    
+    > div  {
+    }
+
+    section {
+      ul.links {
+        margin-top: 2em;
+        text-align: center;
+
+        li {          
+          a {
+            margin: 0.5em;
+            display: block;
+
+            div.fa {
+              font-size: 4em;
+              height: 1.1em;
+              color: #333;
+
+              &.fa-empty {
+                height: 1em;
+                width: 1em;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+              }
+            }
+
+            span {
+              display: block;
+              white-space:nowrap;
+            }
+          }
+        }
+      }
+    }
   }
 }

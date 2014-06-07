@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="/js/vendor/bootstrap/bootstrap.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
@@ -29,18 +30,44 @@
 
     <header class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
       <h1>Jeroen Pelgrims</h1>
-      <p>
-        Software developer from <a href="http://www.openstreetmap.org/relation/59518#map=11/51.2606/4.3578" target="blank">Antwerp, Belgium</a>
-      </p>
+
+      <dl>
+        <dt>
+          <i class="fa fa-mobile"></i>
+        </dt>
+        <dd>
+          <a href="tel:+32499723468">+32 4 9972 3468</a>
+        </dd>
+
+        <dt>
+          <i class="fa fa-map-marker"></i>
+        </dt>
+        <dd>
+          <a href="http://www.openstreetmap.org/relation/59518#map=11/51.2606/4.3578" target="blank">Antwerp, Belgium</a>
+        </dd>
+
+        <dt>
+          <i class="fa fa-envelope"></i>
+        </dt>
+        <dd>
+          <a href="mailto:jeroen.pelgrims@gmail.com" target="blank">jeroen.pelgrims@gmail.com</a>
+        </dd>
+      </dl>
     </header>
 
     <main>
-      <h2 id="professional">Professional</h2>
-      <h2 id="personal">Personal</h2>
-      <h2 id="live">Live</h2>
-    </main>
+      <section>
+        <h2 id="professional">Professional</h2>
+      </section>
+      
+      <section
+>        <h2 id="personal">Personal</h2>
+      </section>
 
-    <!-- <h1 id="test">Titlex</h1> -->
+      <section>
+        <h2 id="live">Live</h2>
+      </section>
+    </main>
 
     <script src="//localhost:35729/livereload.js"></script>
     <script data-main="/js/config" src="/js/vendor/requirejs/require.js"></script>

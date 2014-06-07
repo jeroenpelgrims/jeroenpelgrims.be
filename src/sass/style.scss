@@ -22,6 +22,7 @@ body {
     position: fixed;
     z-index: 1;
     border: none;
+    text-transform: uppercase;
     
     @media (min-width: 768px) {
       &.affix {
@@ -71,16 +72,39 @@ body {
   }
 
   > header {
-    margin: 12em auto 15em auto;
+    margin: 10em auto 12em auto;
     background-color: rgba(33, 33, 33, .5);
     color: #fff;
     text-align: center;
     padding: 1em;
+    font-size: 1.3em;
 
     h1 {
       font-weight: bold;
       text-transform: uppercase;
       text-shadow: 0.05em 0.05em #999;
+    }
+
+    dl {
+      display: inline-block;
+      width: 11.5em;
+
+      dt {
+        float: left;
+        min-width: 2em;
+      }
+
+      dd {
+        text-align: left;
+      }
+    }
+
+    a {
+      color: #fff;
+
+      &:link, &:hover, &:active, &:visited {
+        color: #fff;
+      }
     }
   }
 

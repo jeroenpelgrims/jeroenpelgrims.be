@@ -125,15 +125,17 @@ body {
           a {
             margin: 0.5em;
             display: block;
+            min-height: 6em;
 
             div.fa {
               font-size: 4em;
               height: 1.1em;
               color: #333;
+              height: 1em;
+              width: 1em;
+              border: 1px solid transparent;
 
               &.fa-empty {
-                height: 1em;
-                width: 1em;
                 border-radius: 5px;
                 border: 1px solid #ccc;
               }

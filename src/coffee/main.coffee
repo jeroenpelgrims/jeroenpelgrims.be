@@ -15,11 +15,6 @@ require [
   './rot18'
   './navbar-affix'
 ], ->
+
   unrotEmail()
   unrotPhone()
-
-
-
-  #Email, phone obfuscation
-  #piwik trackingcode
-  #git on server + push hook

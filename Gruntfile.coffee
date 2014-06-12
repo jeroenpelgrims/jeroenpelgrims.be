@@ -17,6 +17,9 @@ module.exports = (grunt) ->
       sass:
         files: ['src/sass/**.scss']
         tasks: ['sass']
+      coffee:
+        files: ['src/coffee/**.coffee']
+        tasks: ['coffee']
       bower:
         files: ['bower.json']
         tasks: ['bower']
@@ -36,6 +39,15 @@ module.exports = (grunt) ->
           src: ['**.scss']
           dest: "#{config.locations.build}/css"
           ext: '.css'
+        ]
+    coffee:
+      compile:
+        files: [
+          expand: true
+          cwd: './src/coffee'
+          src: ['**.coffee']
+          dest: "#{config.locations.build}/js"
+          ext: '.js'
         ]
     connect:
       server:
@@ -61,7 +73,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-sass'
   grunt.loadNpmTasks 'grunt-bower-task'
   grunt.loadNpmTasks 'grunt-contrib-copy'
+  grunt.loadNpmTasks 'grunt-contrib-coffee'
 
-  grunt.registerTask 'build-dev', ['bower', 'sass', 'copy:static']
+  grunt.registerTask 'build-dev', ['bower', 'sass', 'coffee', 'copy:static']
   #grunt.registerTask 'build-dist', ['build-dev', 'minimize', 'test', 'copy;dist']
   grunt.registerTask 'default', ['build-dev', 'connect', 'watch']

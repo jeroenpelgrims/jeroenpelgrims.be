@@ -1,11 +1,9 @@
 require [
-  'bootstrap'
+  './rot32'
+  './navbar-affix'
 ], ->
-  $(->
-    navbar = $('nav[data-spy="affix"]')
-    navbar.affix
-      offset:
-        top: 350
-        bottom: ->
-          return (@bottom = $('.footer').outerHeight(true))
-  )
+  
+  
+  #Email, phone obfuscation
+  #piwik trackingcode
+  #git on server + push hook

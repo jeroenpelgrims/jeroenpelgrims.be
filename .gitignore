@@ -4,3 +4,4 @@ src/js/vendor/*
 *.sublime-project
 *.sublime-workspace
 _build/*
+secret.json

@@ -67,6 +67,21 @@ module.exports = (grunt) ->
           src: ['**.html', 'img/**']
           dest: "#{config.locations.build}"
         ]
+      dist:
+        files: [
+          expand: true
+          cwd: "#{config.locations.build}"
+          src: ['**']
+          dest: "#{config.locations.dist}"
+        ]
+    uglify:
+      dist:
+        files: [
+          expand: true
+          cwd: "#{config.locations.dist}"
+          src: ['js/**.js']
+          dest: "#{config.locations.dist}"
+        ]
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-connect'
@@ -74,7 +89,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-bower-task'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
 
-  grunt.registerTask 'build-dev', ['bower', 'sass', 'coffee', 'copy:static']
-  #grunt.registerTask 'build-dist', ['build-dev', 'minimize', 'test', 'copy;dist']
-  grunt.registerTask 'default', ['build-dev', 'connect', 'watch']
+  grunt.registerTask 'build:dev', ['bower', 'sass', 'coffee', 'copy:static']
+  grunt.registerTask 'build:dist', ['build:dev', 'copy:dist', 'uglify:dist']
+  grunt.registerTask 'default', ['build:dev', 'connect', 'watch']

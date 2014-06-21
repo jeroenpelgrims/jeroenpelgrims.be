@@ -67,6 +67,35 @@ module.exports = (grunt) ->
           src: ['**.html', 'img/**']
           dest: "#{config.locations.build}"
         ]
+      dist:
+        files: [
+          expand: true
+          cwd: "#{config.locations.build}"
+          src: ['**']
+          dest: "#{config.locations.dist}"
+        ]
+    uglify:
+      dist:
+        files: [
+          expand: true
+          cwd: "#{config.locations.dist}"
+          src: ['js/**.js']
+          dest: "#{config.locations.dist}"
+        ]
+    secret: grunt.file.readJSON('secret.json'),
+    sftp:
+      live:
+        files: {
+          "./": "#{config.locations.dist}/**"
+        }
+        options:
+          path: '/home/resurge/www/jeroenpelgrims.be/www2/'
+          host: '<%= secret.host %>',
+          username: '<%= secret.username %>',
+          password: '<%= secret.password %>',
+          showProgress: true
+          srcBasePath: "#{config.locations.dist}/"
+          createDirectories: true
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-connect'
@@ -74,7 +103,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-bower-task'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-ssh'
 
-  grunt.registerTask 'build-dev', ['bower', 'sass', 'coffee', 'copy:static']
-  #grunt.registerTask 'build-dist', ['build-dev', 'minimize', 'test', 'copy;dist']
-  grunt.registerTask 'default', ['build-dev', 'connect', 'watch']
+  grunt.registerTask 'build:dev', ['bower', 'sass', 'coffee', 'copy:static']
+  grunt.registerTask 'build:dist', ['build:dev', 'copy:dist', 'uglify:dist']
+  grunt.registerTask 'default', ['build:dev', 'connect', 'watch']
+  grunt.registerTask 'deploy', ['build:dist', 'sftp:live']

@@ -1,3 +1,5 @@
+#http://blog.jeroenpelgrims.be/jquery-scroll-to-element-plugin/
+
 require ['jquery'], ($) ->
   $.fn.scrollTo = (duration) ->
     duration ?= 1000

@@ -14,7 +14,9 @@ addScrollTo = ->
   ($ 'a[href*=#]').click (e) ->
     e.preventDefault()
     target = ($ e.target).attr 'href'
-    ($ target).scrollTo(500)
+    ($ target).scrollTo 500
+
+    history.pushState {}, document.title, target
 
 require [
   'bootstrap'

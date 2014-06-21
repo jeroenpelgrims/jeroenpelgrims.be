@@ -3,11 +3,6 @@
 body {
   font-family: 'Open Sans Condensed', sans-serif;
 
-  &.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   @media (min-width: 768px) {
     background: url("/img/cover.jpg") no-repeat;
     background-size: cover;
@@ -19,6 +14,11 @@ body {
     background-size: 300%;
     background-position: 20% 0%;
     background-attachment: fixed;
+
+    &.container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   > nav.navbar {
@@ -143,6 +143,13 @@ body {
     clear: both;
     background-color: #fff;
     height: 100em;
+
+    @media (max-width: 768px) {
+      &.row {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
 
     section {
       @media (max-width: 768px) {

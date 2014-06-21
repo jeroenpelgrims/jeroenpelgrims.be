@@ -3,6 +3,11 @@
 body {
   font-family: 'Open Sans Condensed', sans-serif;
 
+  &.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   @media (min-width: 768px) {
     background: url("/img/cover.jpg") no-repeat;
     background-size: cover;
@@ -140,6 +145,15 @@ body {
     height: 100em;
 
     section {
+      @media (max-width: 768px) {
+        h2 {
+          margin-left: 1em;
+        }
+        h3 {
+          margin-left: 2em;
+        }
+      }
+
       ul.links {
         margin-top: 2em;
         text-align: center;

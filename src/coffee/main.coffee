@@ -10,11 +10,19 @@ unrotPhone = ->
   phoneLink.attr 'href', "tel:#{phone.rot18().replace /\s+/g, ''}"
   phoneLink.text phone.rot18()
 
+addScrollTo = ->
+  ($ 'a[href*=#]').click (e) ->
+    e.preventDefault()
+    target = ($ e.target).attr 'href'
+    ($ target).scrollTo(500)
+
 require [
   'bootstrap'
   './rot18'
-  './navbar-affix'
+  './navbar-affix',
+  './scrollTo'
 ], ->
 
   unrotEmail()
   unrotPhone()
+  addScrollTo()

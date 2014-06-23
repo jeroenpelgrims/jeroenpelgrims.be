@@ -11,12 +11,12 @@ unrotPhone = ->
   phoneLink.text phone.rot18()
 
 addScrollTo = ->
-  ($ 'a[href*=#]').click (e) ->
-    e.preventDefault()
-    target = ($ e.target).attr 'href'
-    ($ target).scrollTo 500
+  # ($ 'a[href*=#]').click (e) ->
+  #   e.preventDefault()
+  #   target = ($ e.target).attr 'href'
+  #   ($ target).scrollTo 500
 
-    history.pushState {}, document.title, target
+  #   history.pushState {}, document.title, target
 
 require [
   'bootstrap'

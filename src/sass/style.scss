@@ -19,6 +19,11 @@ body {
       padding-left: 0;
       padding-right: 0;
     }
+
+    *.row {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   > nav.navbar {
@@ -142,14 +147,7 @@ body {
   > main {
     clear: both;
     background-color: #fff;
-    height: 100em;
-
-    @media (max-width: 768px) {
-      &.row {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
+    padding-bottom: 10em;
 
     section {
       @media (max-width: 768px) {
@@ -159,6 +157,10 @@ body {
         h3 {
           margin-left: 2em;
         }
+      }
+
+      p {
+        padding: 0 1em;
       }
 
       ul.links {
@@ -177,7 +179,7 @@ body {
               color: #333;
               height: 1em;
               width: 1em;
-              border: 1px solid transparent;
+              border: 11.5x solid transparent;
 
               &.fa-empty {
                 border-radius: 5px;
@@ -198,6 +200,13 @@ body {
   footer {
     color: #fff;
     background-color: #000;
-    min-height: 15em;
+    margin-bottom: -1.5em;
+    padding: 1em;
+
+    span
+
+    a, a:link, a:hover, a:visited {
+      color: #fff;
+    }
   }
 }

@@ -4,8 +4,8 @@ require ['jquery'], ($) ->
   $.fn.scrollTo = (duration) ->
     duration ?= 1000
 
-    offset = $(@).offset().top - $(window).height()/2 + $(@).height()
+    topOffset = Math.abs(Math.round($(@).offset().top))
 
-    $('html,body').animate({
-      scrollTop: offset
-    }, duration)
+    $('html').animate
+      (scrollTop: topOffset),
+      duration

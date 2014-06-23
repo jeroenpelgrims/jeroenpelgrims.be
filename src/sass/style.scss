@@ -147,7 +147,7 @@ body {
   > main {
     clear: both;
     background-color: #fff;
-    padding-bottom: 10em;
+    padding-bottom: 5em;
 
     section {
       @media (max-width: 768px) {
@@ -202,8 +202,7 @@ body {
     background-color: #000;
     margin-bottom: -1.5em;
     padding: 1em;
-
-    span
+    min-height: 70em;
 
     a, a:link, a:hover, a:visited {
       color: #fff;

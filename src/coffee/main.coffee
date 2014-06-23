@@ -18,13 +18,21 @@ addScrollTo = ->
     ($ target).scrollTo 500
     history.pushState {}, document.title, target
 
+affixNavBar = ->
+  navbar = $('nav[data-spy="affix"]')
+  navbar.affix
+    offset:
+      top: 350
+      bottom: ->
+        return (@bottom = $('.footer').outerHeight(true))
+
 require [
   'bootstrap'
   './rot18'
-  './navbar-affix',
   './scrollTo'
 ], ->
 
   unrotEmail()
   unrotPhone()
   addScrollTo()
+  affixNavBar()

@@ -146,8 +146,8 @@ body {
 
     @media (max-width: 768px) {
       &.row {
-        padding-left: 0;
-        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
       }
     }
 
@@ -193,5 +193,11 @@ body {
         }
       }
     }
+  }
+
+  footer {
+    color: #fff;
+    background-color: #000;
+    min-height: 15em;
   }
 }

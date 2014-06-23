@@ -6,6 +6,6 @@ require ['jquery'], ($) ->
 
     topOffset = Math.abs(Math.round($(@).offset().top))
 
-    $('html').animate
+    $('html').animate(
       (scrollTop: topOffset),
-      duration
+      duration)
